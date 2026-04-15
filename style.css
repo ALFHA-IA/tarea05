@@ -22,6 +22,16 @@ body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333;}
 .nav-links { display: flex; list-style: none; gap: 25px; }
 .nav-links a { color: white; text-decoration: none; font-size: 0.9rem; }
 
-
+.hero-v2 {
+    height: 70vh;
+    background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+                url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
 
 
