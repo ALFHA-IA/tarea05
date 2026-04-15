@@ -33,5 +33,40 @@ body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333;}
     text-align: center;
     color: white;
 }
+.stats-bar {
+    display: flex;
+    justify-content: space-around;
+    background: var(--gold);
+    padding: 40px 10%;
+    margin-top: -50px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
 
+.stat-item { text-align: center; color: var(--primary-dark); }
+.stat-item .number { display: block; font-size: 2.5rem; font-weight: bold; }
+
+
+.services-v2 { padding: 80px 10%; background: #f4f4f4; }
+.section-title { text-align: center; margin-bottom: 50px; font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 5px;
+    transition: 0.3s;
+    border-bottom: 5px solid transparent;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 5px solid var(--gold);
+}
+
+.service-card .icon { font-size: 2rem; margin-bottom: 20px; }
+.btn-primary { background: var(--gold); color: var(--primary-dark); padding: 12px 30px; text-decoration: none; font-weight: bold; }
 
