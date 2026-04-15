@@ -18,5 +18,50 @@
             </ul>
         </nav>
     </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content container">
+            <h1>Soluciones Legales con Integridad</h1>
+            <p>Especialistas en defensa corporativa y litigios de alta complejidad.</p>
+        </div>
+    </section>
+    
+    <section id="servicios" class="container">
+        <h2 class="section-title">Nuestras Áreas</h2>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <button class="tab-link active" data-tab="civil">Derecho Civil</button>
+                <button class="tab-link" data-tab="penal">Derecho Penal</button>
+                <button class="tab-link" data-tab="laboral">Derecho Laboral</button>
+            </div>
+
+            <div id="civil" class="tab-content active">
+                <h3>Derecho Civil</h3>
+                <p>Asesoría en contratos, sucesiones, propiedad y responsabilidad civil.</p>
+            </div>
+            <div id="penal" class="tab-content">
+                <h3>Derecho Penal</h3>
+                <p>Defensa técnica especializada en delitos económicos y procesos judiciales.</p>
+            </div>
+            <div id="laboral" class="tab-content">
+                <h3>Derecho Laboral</h3>
+                <p>Protección de derechos del trabajador y asesoría a empresas en RRHH.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-contacto" class="modal">
+        <div class="modal-body">
+            <span class="close-modal">&times;</span>
+            <h2>Solicitar Asesoría</h2>
+            <form id="form-legal">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea placeholder="Cuéntenos su caso..." rows="4"></textarea>
+                <button type="submit" class="btn-cta">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
