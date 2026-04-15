@@ -25,3 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.onclick = (event) => {
         if (event.target == modal) modal.style.display = 'none';
     }
+
+    document.getElementById('form-legal').onsubmit = (e) => {
+        e.preventDefault();
+        alert('Mensaje enviado con éxito. Un abogado se contactará pronto.');
+        modal.style.display = 'none';
+    };
+});
