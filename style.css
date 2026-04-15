@@ -9,3 +9,23 @@
 body { font-family: 'Montserrat', sans-serif; color: var(--text); overflow-x: hidden; }
 
 .container { max-width: 1100px; margin: auto; padding: 0 2rem; }
+
+header { background: var(--navy); color: var(--white); padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+.logo span { color: var(--gold); font-size: 0.9rem; display: block; letter-spacing: 3px; }
+.nav-menu { display: flex; list-style: none; align-items: center; gap: 2rem; }
+.nav-menu a { color: var(--white); text-decoration: none; font-weight: 500; }
+
+.tabs-header { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid var(--light); }
+.tab-link { padding: 10px 20px; border: none; background: none; cursor: pointer; font-size: 1rem; color: #777; }
+.tab-link.active { border-bottom: 3px solid var(--gold); color: var(--navy); font-weight: bold; }
+.tab-content { display: none; padding: 20px; background: var(--light); border-radius: 8px; animation: fadeIn 0.5s ease; }
+.tab-content.active { display: block; }
+
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+.modal-body { background: var(--white); padding: 3rem; width: 90%; max-width: 500px; position: relative; border-radius: 4px; }
+.close-modal { position: absolute; top: 10px; right: 20px; font-size: 2rem; cursor: pointer; }
+
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
