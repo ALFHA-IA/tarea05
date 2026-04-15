@@ -13,4 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
             document.getElementById(target).classList.add('active');
         });
-});
+    });
+
+    const modal = document.getElementById('modal-contacto');
+    const btnOpen = document.getElementById('btn-modal');
+    const btnClose = document.querySelector('.close-modal');
+
+    btnOpen.onclick = () => modal.style.display = 'flex';
+    btnClose.onclick = () => modal.style.display = 'none';
+
+    window.onclick = (event) => {
+        if (event.target == modal) modal.style.display = 'none';
+    }
