@@ -42,13 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     });
 
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            nav.style.background = '#050c18';
-            nav.style.padding = '15px 10%';
-        } else {
-            nav.style.background = '#0a192f';
-            nav.style.padding = '20px 10%';
-        }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
+});
