@@ -1,19 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    const tabLinks = document.querySelectorAll('.tab-link');
-    const tabContents = document.querySelectorAll('.tab-content');
+    const navbar = document.getElementById('navbar');
 
-    tabLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const target = link.databaset.tab;
-
-            tabLinks.forEach(l => l.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-
-            link.classList.add('active');
-            document.getElementById(target).classList.add('active');
-        });
+    // 1. Scroll Effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
+
+
 
     const modal = document.getElementById('modal-contacto');
     const btnOpen = document.getElementById('btn-modal');
@@ -34,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {        e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
