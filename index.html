@@ -3,74 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudio Jurídico Profesional</title>
+    <title>HDU | Urquiaga, Diaz & Huamaní</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-   <nav class="navbar">
-        <div class="logo">HDU & <span>ABOGADOS</span></div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+   <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <div class="logo">HDU <span>& ABOGADOS</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Especialidades</a></li>
+                <li><a href="#contacto" class="btn-cta">Consulta Gratuita</a></li>
+            </ul>
+        </div>
     </nav>
 
-
-    <header id="inicio" class="hero-v2">
+    <header id="inicio" class="hero-premium">
         <div class="hero-overlay">
-            <h1>Compromiso Ético, Resultados Sólidos</h1>
-            <p>Más de 15 años defendiendo los intereses de nuestros clientes con firmeza y transparencia.</p>
-            <div class="cta-group">
-                <a href="#contacto" class="btn-primary">Solicitar Cita</a>
-                <a href="#servicios" class="btn-secondary">Nuestras Áreas</a>
+            <div class="hero-container container">
+                <span class="tagline">Justicia • Estrategia • Resultados</span>
+                <h1>Defendemos su Futuro con <br><span class="gold-text">Maestría Legal</span></h1>
+                <p>Urquiaga, Diaz y Huamaní: Un equipo de especialistas dedicados a brindar soluciones jurídicas de alto impacto en Trujillo.</p>
+                <div class="hero-actions">
+                    <a href="#servicios" class="btn-gold">Nuestros Servicios</a>
+                    <a href="https://wa.me/51985493757" class="btn-outline"><i class="fab fa-whatsapp"></i> Chat Directo</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <section id="nosotros" class="stats-bar">
-        <div class="stat-item">
-            <span class="number">500+</span>
-            <span class="label">Casos Ganados</span>
-        </div>
-        <div class="stat-item">
-            <span class="number">20+</span>
-            <span class="label">Especialistas</span>
-        </div>
-        <div class="stat-item">
-            <span class="number">98%</span>
-            <span class="label">Clientes Satisfechos</span>
-        </div>
+  <section class="trust-bar container">
+        <div class="stat"><h3>+15</h3><p>Años de Trayectoria</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><h3>98%</h3><p>Éxito Legal</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><h3>500+</h3><p>Clientes Corporativos</p></div>
     </section>
-    
-    <section id="servicios" class="services-v2">
-        <h2 class="section-title">Nuestras Especialidades</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="icon">⚖️</div>
-                <h3>Derecho Corporativo</h3>
-                <p>Constitución de empresas, fusiones y adquisiciones con visión estratégica.</p>
+
+    <section id="servicios" class="services-v3">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Especialidades de Élite</h2>
+                <div class="title-underline"></div>
             </div>
-            <div class="service-card">
-                <div class="icon">🏠</div>
-                <h3>Derecho Inmobiliario</h3>
-                <p>Saneamiento de predios, compraventa y asesoría en proyectos de construcción.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">👨‍👩‍👧‍👦</div>
-                <h3>Derecho de Familia</h3>
-                <p>Divorcios, tenencia y regímenes de visitas manejados con total discreción.</p>
+            <div class="services-grid">
+                <div class="s-card">
+                    <div class="s-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Asesoría Corporativa</h3>
+                    <p>Blindaje legal para empresas y startups en expansión comercial.</p>
+                </div>
+                <div class="s-card active">
+                    <div class="s-icon"><i class="fas fa-building"></i></div>
+                    <h3>Derecho Civil</h3>
+                    <p>Expertos en contratos de alta complejidad, patrimonio y sucesiones.</p>
+                </div>
+                <div class="s-card">
+                    <div class="s-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Defensa Penal</h3>
+                    <p>Estrategias de litigación avanzada en delitos económicos y judiciales.</p>
+                </div>
             </div>
         </div>
     </section>
 
     
-    <footer class="footer-v2">
-        <p>&copy; 2026 HDU. Trujillo, Avenida España 230, Perú.</p>
-        <p>&copy; version 2.0</p>
+    <footer id="contacto">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="logo">HDU</div>
+                <p>Liderazgo jurídico en Trujillo. Representamos a nuestros clientes con la firmeza y ética que cada caso requiere.</p>
+                <div class="contact-details">
+                    <div class="c-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Trujillo, La Libertad, Perú</span>
+                    </div>
+                    <div class="c-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:betaalfha@gmail.com">betaalfha@gmail.com</a>
+                    </div>
+                    <div class="c-item ws-active">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/51985493757" target="_blank">985 493 757</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-wrapper">
+                <form id="contact-form" class="footer-form">
+                    <h3>Inicie su Consulta</h3>
+                    <div class="input-row">
+                        <div class="field">
+                            <input type="text" id="nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="field">
+                            <input type="email" id="email" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                    <input type="tel" id="telefono" placeholder="Número de contacto" required>
+                    <textarea id="mensaje" placeholder="¿Cómo podemos ayudarle?" required></textarea>
+                    <button type="submit" class="btn-submit">
+                        <span>Enviar a WhatsApp</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Urquiaga, Diaz y Huamaní | Firma legal de abogados</p>
+        </div>
     </footer>
      
      
