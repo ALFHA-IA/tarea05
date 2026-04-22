@@ -282,3 +282,211 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ============================================
+    // 11. TESTIMONIALS SLIDER
+    // ============================================
+    const track = document.querySelector('.testimonials-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+    const dotsContainer = document.querySelector('.testimonial-dots');
+
+    let currentSlide = 0;
+    const totalSlides = cards.length;
+
+    // Crear dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('testimonial-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.testimonial-dot');
+
+    function getSlidesPerView() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    function goToSlide(index) {
+        const slidesPerView = getSlidesPerView();
+        const maxSlide = totalSlides - slidesPerView;
+
+        currentSlide = Math.max(0, Math.min(index, maxSlide));
+
+        const cardWidth = cards[0].offsetWidth + 32; // gap
+        track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+    // Auto-play
+    let autoPlayInterval = setInterval(() => {
+        const slidesPerView = getSlidesPerView();
+        const maxSlide = totalSlides - slidesPerView;
+
+        if (currentSlide >= maxSlide) {
+            goToSlide(0);
+        } else {
+            goToSlide(currentSlide + 1);
+        }
+    }, 5000);
+
+    // Pausar en hover
+    track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    track.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(() => {
+            const slidesPerView = getSlidesPerView();
+            const maxSlide = totalSlides - slidesPerView;
+            if (currentSlide >= maxSlide) {
+                goToSlide(0);
+            } else {
+                goToSlide(currentSlide + 1);
+            }
+        }, 5000);
+    });
+
+    window.addEventListener('resize', () => goToSlide(currentSlide));
+
+    // ============================================
+    // 12. WHATSAPP FORM
+    // ============================================
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const telefono = document.getElementById('telefono').value;
+        const especialidad = document.getElementById('especialidad').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        const numeroWhatsApp = "51985493757";
+
+        const especialidades = {
+            'corporativo': 'Asesoría Corporativa',
+            'civil': 'Derecho Civil',
+            'penal': 'Defensa Penal',
+            'laboral': 'Derecho Laboral',
+            'administrativo': 'Derecho Administrativo',
+            'arbitraje': 'Arbitraje y Mediación'
+        };
+
+        const especialidadTexto = especialidades[especialidad] || 'No especificada';
+
+        const mensajeTexto = `*Nueva Consulta Legal - HDU Abogados*%0A%0A` +
+            `*Nombre:* ${nombre}%0A` +
+            `*Email:* ${email}%0A` +
+            `*Teléfono:* ${telefono}%0A` +
+            `*Especialidad:* ${especialidadTexto}%0A` +
+            `*Mensaje:* ${mensaje}%0A%0A` +
+            `_Enviado desde hduabogados.pe_`;
+
+        const url = `https://wa.me/${numeroWhatsApp}?text=${mensajeTexto}`;
+
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<span>Generando Chat...</span> <i class="fas fa-circle-notch fa-spin"></i>';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            window.open(url, '_blank');
+            btn.innerHTML = '<span>¡Enviado!</span> <i class="fas fa-check"></i>';
+            btn.style.background = '#10B981';
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+                btn.disabled = false;
+                contactForm.reset();
+            }, 2000);
+        }, 1000);
+    });
+
+    // ============================================
+    // 13. BACK TO TOP
+    // ============================================
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // ============================================
+    // 14. PARALLAX SUAVE EN HERO
+    // ============================================
+    const hero = document.querySelector('.hero-premium');
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        if (scrolled < window.innerHeight) {
+            hero.style.backgroundPositionY = (scrolled * 0.5) + 'px';
+        }
+    });
+
+    // ============================================
+    // 15. RIPPLE EFFECT EN BOTONES
+    // ============================================
+    document.querySelectorAll('.btn-gold, .btn-submit').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const ripple = document.createElement('span');
+            ripple.style.cssText = `
+                position: absolute;
+                background: rgba(255,255,255,0.3);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+                left: ${x}px;
+                top: ${y}px;
+                width: 20px;
+                height: 20px;
+                margin-left: -10px;
+                margin-top: -10px;
+            `;
+
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+
+    // Agregar keyframe para ripple
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(20);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
