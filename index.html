@@ -1,69 +1,584 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDU | Urquiaga, Diaz & Huamaní</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>HDU | Urquiaga, Diaz & Huamaní - Estudio de Abogados Trujillo</title>
+    <meta name="description"
+        content="Estudio jurídico de élite en Trujillo. Especialistas en derecho corporativo, civil y penal. Más de 15 años de experiencia.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-   <nav class="navbar" id="navbar">
+
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">HDU</div>
+            <div class="preloader-line"></div>
+            <div class="preloader-text">Cargando Excelencia Legal...</div>
+        </div>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
         <div class="container nav-content">
-            <div class="logo">HDU <span>& ABOGADOS</span></div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Especialidades</a></li>
-                <li><a href="#contacto" class="btn-cta">Consulta Gratuita</a></li>
-            </ul>
+            <a href="#inicio" class="logo">
+                <span class="logo-main">HDU</span>
+                <span class="logo-sub">& ABOGADOS</span>
+            </a>
+            <div class="nav-menu-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#servicios" class="nav-link">Especialidades</a></li>
+                    <li><a href="#equipo" class="nav-link">Equipo</a></li>
+                    <li><a href="#testimonios" class="nav-link">Casos</a></li>
+                    <li><a href="#contacto" class="btn-cta">Consulta Gratuita</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
     <header id="inicio" class="hero-premium">
+        <div class="hero-particles" id="particles"></div>
         <div class="hero-overlay">
             <div class="hero-container container">
-                <span class="tagline">Justicia • Estrategia • Resultados</span>
-                <h1>Defendemos su Futuro con <br><span class="gold-text">Maestría Legal</span></h1>
-                <p>Urquiaga, Diaz y Huamaní: Un equipo de especialistas dedicados a brindar soluciones jurídicas de alto impacto en Trujillo.</p>
-                <div class="hero-actions">
-                    <a href="#servicios" class="btn-gold">Nuestros Servicios</a>
-                    <a href="https://wa.me/51985493757" class="btn-outline"><i class="fab fa-whatsapp"></i> Chat Directo</a>
+                <div class="hero-content" data-aos="fade-up">
+                    <span class="tagline">Justicia • Estrategia • Resultados</span>
+                    <h1>
+                        <span class="line">Defendemos su</span>
+                        <span class="line">Futuro con</span>
+                        <span class="line gold-text">Maestría Legal</span>
+                    </h1>
+                    <p class="hero-desc">Urquiaga, Diaz y Huamaní: Un equipo de especialistas dedicados a brindar
+                        soluciones jurídicas de alto impacto en Trujillo y todo el Perú.</p>
+                    <div class="hero-actions">
+                        <a href="#servicios" class="btn-gold magnetic-btn">
+                            <span>Nuestros Servicios</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/51985493757" class="btn-outline magnetic-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Chat Directo</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats-mini">
+                        <div class="mini-stat">
+                            <span class="mini-number" data-count="15">0</span>+
+                            <span class="mini-label">Años</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-number" data-count="98">0</span>%
+                            <span class="mini-label">Éxito</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-number" data-count="500">0</span>+
+                            <span class="mini-label">Clientes</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Desplácese</span>
+        </div>
     </header>
 
-  <section class="trust-bar container">
-        <div class="stat"><h3>+15</h3><p>Años de Trayectoria</p></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><h3>98%</h3><p>Éxito Legal</p></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><h3>500+</h3><p>Clientes Corporativos</p></div>
+    
+    <section class="trust-bar-section">
+        <div class="container">
+            <div class="trust-bar">
+                <div class="stat" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <div class="stat-content">
+                        <h3><span class="counter" data-target="15">0</span>+</h3>
+                        <p>Años de Trayectoria</p>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="stat-content">
+                        <h3><span class="counter" data-target="98">0</span>%</h3>
+                        <p>Éxito Legal</p>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-content">
+                        <h3><span class="counter" data-target="500">0</span>+</h3>
+                        <p>Clientes Corporativos</p>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="stat-content">
+                        <h3><span class="counter" data-target="1200">0</span>+</h3>
+                        <p>Casos Resueltos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="servicios" class="services-v3">
+   
+    <section id="nosotros" class="about-section">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Especialidades de Élite</h2>
-                <div class="title-underline"></div>
+            <div class="about-grid">
+                <div class="about-image-wrapper" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
+                            alt="Equipo HDU Abogados">
+                        <div class="about-image-overlay"></div>
+                        <div class="experience-badge">
+                            <span class="exp-number">15+</span>
+                            <span class="exp-text">Años de<br>Experiencia</span>
+                        </div>
+                    </div>
+                    <div class="about-image-bg"></div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-tag">Sobre Nosotros</span>
+                    <h2 class="section-title">Excelencia Jurídica con <span class="gold-text">Compromiso Total</span>
+                    </h2>
+                    <p class="about-text">En HDU Abogados, combinamos conocimiento jurídico profundo con una visión
+                        estratégica moderna. Nuestro equipo multidisciplinario está comprometido con la defensa de los
+                        intereses de nuestros clientes con la máxima ética profesional.</p>
+                    <p class="about-text">Hemos representado a empresas líderes, familias y personas en casos de alta
+                        complejidad, logrando resultados excepcionales que han consolidado nuestra reputación en
+                        Trujillo y a nivel nacional.</p>
+
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="feature-text">
+                                <h4>Confidencialidad Absoluta</h4>
+                                <p>Protegemos su información con los más altos estándares.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                            <div class="feature-text">
+                                <h4>Atención 24/7</h4>
+                                <p>Disponibilidad permanente para emergencias legales.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="feature-text">
+                                <h4>Abogados Certificados</h4>
+                                <p>Especialistas con certificaciones internacionales.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contacto" class="btn-gold-outline">
+                        <span>Conozca Nuestro Equipo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Nuestras Especialidades</span>
+                <h2 class="section-title">Soluciones Jurídicas de <span class="gold-text">Élite</span></h2>
+                <p class="section-subtitle">Cada caso merece una estrategia única. Nuestros abogados especializados
+                    están preparados para cualquier desafío legal.</p>
+            </div>
+
             <div class="services-grid">
-                <div class="s-card">
-                    <div class="s-icon"><i class="fas fa-balance-scale"></i></div>
-                    <h3>Asesoría Corporativa</h3>
-                    <p>Blindaje legal para empresas y startups en expansión comercial.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-number">01</div>
+                            <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                            <h3>Asesoría Corporativa</h3>
+                            <p>Blindaje legal integral para empresas y startups en expansión comercial.</p>
+                            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="service-back">
+                            <h3>Asesoría Corporativa</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Constitución de empresas</li>
+                                <li><i class="fas fa-check"></i> Contratos comerciales</li>
+                                <li><i class="fas fa-check"></i> Fusiones y adquisiciones</li>
+                                <li><i class="fas fa-check"></i> Propiedad intelectual</li>
+                                <li><i class="fas fa-check"></i> Cumplimiento normativo</li>
+                            </ul>
+                            <a href="#contacto" class="btn-service">Consultar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="s-card active">
-                    <div class="s-icon"><i class="fas fa-building"></i></div>
-                    <h3>Derecho Civil</h3>
-                    <p>Expertos en contratos de alta complejidad, patrimonio y sucesiones.</p>
+
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-number">02</div>
+                            <div class="service-icon"><i class="fas fa-building"></i></div>
+                            <h3>Derecho Civil</h3>
+                            <p>Expertos en contratos de alta complejidad, patrimonio, sucesiones y derecho de familia.
+                            </p>
+                            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="service-back">
+                            <h3>Derecho Civil</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Contratos civiles</li>
+                                <li><i class="fas fa-check"></i> Derecho de familia</li>
+                                <li><i class="fas fa-check"></i> Sucesiones y herencias</li>
+                                <li><i class="fas fa-check"></i> Propiedad inmobiliaria</li>
+                                <li><i class="fas fa-check"></i> Responsabilidad civil</li>
+                            </ul>
+                            <a href="#contacto" class="btn-service">Consultar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="s-card">
-                    <div class="s-icon"><i class="fas fa-gavel"></i></div>
-                    <h3>Defensa Penal</h3>
-                    <p>Estrategias de litigación avanzada en delitos económicos y judiciales.</p>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-number">03</div>
+                            <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                            <h3>Defensa Penal</h3>
+                            <p>Estrategias de litigación avanzada en delitos económicos, judiciales y derecho penal.</p>
+                            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="service-back">
+                            <h3>Defensa Penal</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Delitos económicos</li>
+                                <li><i class="fas fa-check"></i> Defensa en juicio oral</li>
+                                <li><i class="fas fa-check"></i> Habeas corpus</li>
+                                <li><i class="fas fa-check"></i> Compliance penal</li>
+                                <li><i class="fas fa-check"></i> Recursos de casación</li>
+                            </ul>
+                            <a href="#contacto" class="btn-service">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-number">04</div>
+                            <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                            <h3>Derecho Laboral</h3>
+                            <p>Protección de derechos laborales y asesoría en relaciones de trabajo y empleo.</p>
+                            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="service-back">
+                            <h3>Derecho Laboral</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Despidos arbitrarios</li>
+                                <li><i class="fas fa-check"></i> Reclamaciones de beneficios</li>
+                                <li><i class="fas fa-check"></i> Contratos laborales</li>
+                                <li><i class="fas fa-check"></i> Hostigamiento laboral</li>
+                                <li><i class="fas fa-check"></i> Negociaciones colectivas</li>
+                            </ul>
+                            <a href="#contacto" class="btn-service">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-number">05</div>
+                            <div class="service-icon"><i class="fas fa-landmark"></i></div>
+                            <h3>Derecho Administrativo</h3>
+                            <p>Recursos ante entidades públicas, licitaciones y contratos con el Estado.</p>
+                            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="service-back">
+                            <h3>Derecho Administrativo</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Recursos administrativos</li>
+                                <li><i class="fas fa-check"></i> Licitaciones públicas</li>
+                                <li><i class="fas fa-check"></i> Contratos estatales</li>
+                                <li><i class="fas fa-check"></i> Sanciones administrativas</li>
+                                <li><i class="fas fa-check"></i> Procesos disciplinarios</li>
+                            </ul>
+                            <a href="#contacto" class="btn-service">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-number">06</div>
+                            <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                            <h3>Arbitraje y Mediación</h3>
+                            <p>Resolución alternativa de conflictos con métodos eficientes y confidenciales.</p>
+                            <span class="service-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="service-back">
+                            <h3>Arbitraje y Mediación</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Arbitraje comercial</li>
+                                <li><i class="fas fa-check"></i> Mediación familiar</li>
+                                <li><i class="fas fa-check"></i> Conciliación extrajudicial</li>
+                                <li><i class="fas fa-check"></i> Arbitraje internacional</li>
+                                <li><i class="fas fa-check"></i> Negociación estratégica</li>
+                            </ul>
+                            <a href="#contacto" class="btn-service">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header light" data-aos="fade-up">
+                <span class="section-tag">Nuestro Proceso</span>
+                <h2 class="section-title">Cómo <span class="gold-text">Trabajamos</span></h2>
+                <p class="section-subtitle">Un método probado que garantiza resultados excepcionales en cada caso.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-line"></div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Consulta Inicial</h3>
+                        <p>Evaluamos su caso de forma gratuita y confidencial, analizando todos los aspectos legales
+                            relevantes.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="150">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-search"></i></div>
+                        <h3>Investigación</h3>
+                        <p>Realizamos un análisis exhaustivo de la documentación, jurisprudencia y antecedentes del
+                            caso.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-chess-knight"></i></div>
+                        <h3>Estrategia Legal</h3>
+                        <p>Diseñamos un plan de acción personalizado con objetivos claros y plazos definidos.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="450">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3>Litigación</h3>
+                        <p>Representamos sus intereses con firmeza y profesionalismo en todas las instancias judiciales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="600">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-trophy"></i></div>
+                        <h3>Resultado</h3>
+                        <p>Logramos la resolución favorable de su caso con seguimiento post-litigio incluido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="equipo" class="team-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Nuestro Equipo</span>
+                <h2 class="section-title">Abogados de <span class="gold-text">Primera Clase</span></h2>
+                <p class="section-subtitle">Profesionales con trayectoria internacional y compromiso absoluto con la
+                    justicia.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
+                            alt="Socio Fundador">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Carlos Urquiaga</h3>
+                        <span class="team-role">Socio Fundador</span>
+                        <p>Especialista en Derecho Corporativo y Civil con más de 20 años de experiencia.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+                            alt="Socia">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dra. María Diaz</h3>
+                        <span class="team-role">Socia - Derecho Penal</span>
+                        <p>Experta en litigación penal y defensa de delitos económicos de alta complejidad.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80"
+                            alt="Socio">
+                        <div class="team-overlay">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. José Huamaní</h3>
+                        <span class="team-role">Socio - Derecho Laboral</span>
+                        <p>Especialista en derecho laboral y relaciones colectivas de trabajo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="testimonios" class="testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Testimonios</span>
+                <h2 class="section-title">Lo que Dicen <span class="gold-text">Nuestros Clientes</span></h2>
+            </div>
+
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"HDU Abogados resolvió un caso corporativo complejo que otros
+                            estudios no pudieron. Su profesionalismo y dedicación son excepcionales."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
+                                alt="Cliente">
+                            <div>
+                                <h4>Roberto Mendoza</h4>
+                                <span>CEO, Grupo Mendoza</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"La defensa penal de la Dra. Diaz fue impecable. Logró la absolución
+                            en un caso que parecía perdido. Eternamente agradecido."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
+                                alt="Cliente">
+                            <div>
+                                <h4>Luis Fernández</h4>
+                                <span>Empresario</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Excelente asesoría en derecho laboral. Nos ayudaron a reestructurar
+                            toda la política de recursos humanos de nuestra empresa."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80"
+                                alt="Cliente">
+                            <div>
+                                <h4>Ana Torres</h4>
+                                <span>Gerente de RRHH, TechPerú</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev"><i class="fas fa-arrow-left"></i></button>
+                    <div class="testimonial-dots"></div>
+                    <button class="testimonial-next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>¿Necesita Asesoría Legal <span class="gold-text">Urgente?</span></h2>
+                <p>Estamos disponibles 24/7 para atender su caso. La primera consulta es completamente gratuita y
+                    confidencial.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/51985493757" class="btn-gold magnetic-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Directo</span>
+                    </a>
+                    <a href="tel:+51985493757" class="btn-outline magnetic-btn">
+                        <i class="fas fa-phone"></i>
+                        <span>Llamar Ahora</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -71,53 +586,139 @@
 
     
     <footer id="contacto">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <div class="logo">HDU</div>
-                <p>Liderazgo jurídico en Trujillo. Representamos a nuestros clientes con la firmeza y ética que cada caso requiere.</p>
-                <div class="contact-details">
-                    <div class="c-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Trujillo, La Libertad, Perú</span>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-info" data-aos="fade-right">
+                        <div class="logo footer-logo">
+                            <span class="logo-main">HDU</span>
+                            <span class="logo-sub">& ABOGADOS</span>
+                        </div>
+                        <p class="footer-desc">Liderazgo jurídico en Trujillo y todo el Perú. Representamos a nuestros
+                            clientes con la firmeza, ética y excelencia que cada caso merece.</p>
+
+                        <div class="contact-details">
+                            <div class="c-item">
+                                <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="c-text">
+                                    <span class="c-label">Ubicación</span>
+                                    <span>Trujillo, La Libertad, Perú</span>
+                                </div>
+                            </div>
+                            <div class="c-item">
+                                <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="c-text">
+                                    <span class="c-label">Email</span>
+                                    <a href="mailto:betaalfha@gmail.com">betaalfha@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="c-item ws-active">
+                                <div class="c-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="c-text">
+                                    <span class="c-label">WhatsApp</span>
+                                    <a href="https://wa.me/51985493757" target="_blank">+51 985 493 757</a>
+                                </div>
+                            </div>
+                            <div class="c-item">
+                                <div class="c-icon"><i class="fas fa-clock"></i></div>
+                                <div class="c-text">
+                                    <span class="c-label">Horario</span>
+                                    <span>Lun - Vie: 8:00 - 20:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-social">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
                     </div>
-                    <div class="c-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:betaalfha@gmail.com">betaalfha@gmail.com</a>
-                    </div>
-                    <div class="c-item ws-active">
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/51985493757" target="_blank">985 493 757</a>
+
+                    <div class="form-wrapper" data-aos="fade-left">
+                        <form id="contact-form" class="footer-form">
+                            <h3>Inicie su Consulta</h3>
+                            <p class="form-subtitle">Complete el formulario y nos comunicaremos con usted en menos de 24
+                                horas.</p>
+
+                            <div class="input-row">
+                                <div class="field floating-field">
+                                    <input type="text" id="nombre" placeholder=" " required>
+                                    <label for="nombre">Nombre completo</label>
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="field floating-field">
+                                    <input type="email" id="email" placeholder=" " required>
+                                    <label for="email">Correo electrónico</label>
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+
+                            <div class="field floating-field">
+                                <input type="tel" id="telefono" placeholder=" " required>
+                                <label for="telefono">Número de contacto</label>
+                                <i class="fas fa-phone"></i>
+                            </div>
+
+                            <div class="field floating-field">
+                                <select id="especialidad" required>
+                                    <option value="" disabled selected>Seleccione especialidad</option>
+                                    <option value="corporativo">Asesoría Corporativa</option>
+                                    <option value="civil">Derecho Civil</option>
+                                    <option value="penal">Defensa Penal</option>
+                                    <option value="laboral">Derecho Laboral</option>
+                                    <option value="administrativo">Derecho Administrativo</option>
+                                    <option value="arbitraje">Arbitraje y Mediación</option>
+                                </select>
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+
+                            <div class="field floating-field">
+                                <textarea id="mensaje" placeholder=" " required></textarea>
+                                <label for="mensaje">¿Cómo podemos ayudarle?</label>
+                                <i class="fas fa-comment"></i>
+                            </div>
+
+                            <button type="submit" class="btn-submit magnetic-btn">
+                                <span>Enviar a WhatsApp</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+
+                            <p class="form-note"><i class="fas fa-lock"></i> Su información está protegida y es 100%
+                                confidencial.</p>
+                        </form>
                     </div>
                 </div>
             </div>
-            
-            <div class="form-wrapper">
-                <form id="contact-form" class="footer-form">
-                    <h3>Inicie su Consulta</h3>
-                    <div class="input-row">
-                        <div class="field">
-                            <input type="text" id="nombre" placeholder="Nombre completo" required>
-                        </div>
-                        <div class="field">
-                            <input type="email" id="email" placeholder="Correo electrónico" required>
-                        </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Urquiaga, Diaz y Huamaní | Firm Legal Solutions. Todos los derechos reservados.</p>
+                    <div class="footer-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos de Servicio</a>
+                        <a href="#">Mapa del Sitio</a>
                     </div>
-                    <input type="tel" id="telefono" placeholder="Número de contacto" required>
-                    <textarea id="mensaje" placeholder="¿Cómo podemos ayudarle?" required></textarea>
-                    <button type="submit" class="btn-submit">
-                        <span>Enviar a WhatsApp</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Urquiaga, Diaz y Huamaní | Firma legal de abogados</p>
-        </div>
     </footer>
-     
-     
-    <script src="script.js"></script>
 
+
+    <a href="https://wa.me/51985493757" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesita ayuda?</span>
+    </a>
+
+
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
