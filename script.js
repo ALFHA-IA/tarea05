@@ -489,4 +489,112 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+    // ============================================
+    // 16. TILT EFFECT EN TARJETAS DE SERVICIOS
+    // ============================================
+    if (window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
 
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.querySelector('.service-card-inner').style.transform =
+                    `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.service-card-inner').style.transform = '';
+            });
+        });
+    }
+
+    // ============================================
+    // 17. SCROLL REVEAL PARA ELEMENTOS ADICIONALES
+    // ============================================
+    const revealElements = document.querySelectorAll('.feature-item, .process-step, .team-card');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        revealObserver.observe(el);
+    });
+
+    // ============================================
+    // 18. EFECTO DE ESCRITURA EN TAGLINE
+    // ============================================
+    const tagline = document.querySelector('.tagline');
+    if (tagline) {
+        const text = tagline.textContent;
+        tagline.textContent = '';
+        tagline.style.opacity = '1';
+
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                tagline.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 80);
+            }
+        };
+
+        setTimeout(typeWriter, 2000);
+    }
+
+    // ============================================
+    // 19. ANIMACIÓN DE ENTRADA PARA EL TRUST BAR
+    // ============================================
+    const trustBar = document.querySelector('.trust-bar');
+
+    if (trustBar) {
+        const trustObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    trustObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        trustBar.style.opacity = '0';
+        trustBar.style.transform = 'translateY(50px)';
+        trustBar.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        trustObserver.observe(trustBar);
+    }
+
+    // ============================================
+    // 20. EFECTO GLOW EN INPUTS AL FOCUS
+    // ============================================
+    document.querySelectorAll('.floating-field input, .floating-field textarea').forEach(input => {
+        input.addEventListener('focus', function () {
+            this.parentElement.style.transform = 'scale(1.02)';
+        });
+
+        input.addEventListener('blur', function () {
+            this.parentElement.style.transform = 'scale(1)';
+        });
+    });
+
+    console.log('%c HDU Abogados ', 'background: #D4AF37; color: #0A0F1A; font-size: 24px; font-weight: bold; padding: 10px 20px; border-radius: 4px;');
+    console.log('%c Sitio web cargado exitosamente ✓', 'color: #D4AF37; font-size: 14px;');
+});
